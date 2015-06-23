@@ -1,0 +1,64 @@
+<div id="siteControls" style="position: relative; text-align: right; width: 100%; padding-right: 10px; padding-bottom: 10px;">
+	<div style="position: absolute; right: 20px; bottom: 5px;">
+		<table style="width: 100%; border-spacing: 10px; border-collapse: separate;" cellpadding="5" cellspacing="5">
+			<tr>
+				<td>
+				<?php if( (int)SITE_ALLOW_LANGUAGE_CHANGE == 1 ): ?>		
+						<select class="jquery-ui" autocomplete="off" name="langSelect" id="langSelect" style="padding-right: initial; padding-left: initial;">
+							<option value=""><?php echo ucfirst( $_SESSION['site']['phrases']['language'] ); ?></option>
+							<option <?php if( $_SESSION['user']['site_language'] == 1 ): ?> selected="selected" <?php endif; ?> value="1">English (U.S.)</option>
+							<option <?php if( $_SESSION['user']['site_language'] == 2 ): ?> selected="selected" <?php endif; ?> value="2">Deutsch</option>
+						</select>							
+				<?php endif; ?>
+				</td>
+					<?php if( (int)SITE_ALLOW_TEMPLATE_CHANGE == 1 ): ?>			
+					<td>
+						<div class="ui-widget ui-widget-header" style="display: none;">
+							<div class="ui-state-highlight ui-corner-all">
+								<p><span class="ui-icon ui-icon-info"></span>
+							</div>
+						</div>								
+						<script type="text/javascript" src="<?php echo PROTOCOL_RELATIVE_URL; ?>/js/themeswitcher.js"></script>
+						<div id="theme-switcher"></div>
+			
+						<script type="text/javascript">
+							$( document ).ready(function() {
+								$('#theme-switcher').themeswitcher({ 
+									useSelectBoxIt: USE_SELECTBOXIT, 
+							    	loadTheme: CURRENT_THEME,
+							    	localCssPath: BASEURL + '/css/jquery-ui/themes', 
+							    	localThemes: SITE_THEMES,
+						    		cookieExpires: 14600, 
+							    	cookiePath: '/',		   
+							    	cookieName: 'theme', 
+							    	cookieOnSet: function( cookieName, cookieValue ) {
+								    	CURRENT_THEME = cookieValue;
+							
+							    		$.post( BASEURL + '/users/ajax', { 
+								    				method: 'sessionUpdate', 
+								    				theme: cookieValue 
+												},
+										function( response, textStatus, jqXHRresponse ) {
+							    					location.reload();												    				
+												}
+										);					
+								    },
+							    	onSelect: function() {						  						    
+							    	$('.navbar').fadeOut();						  						    
+							    		$.blockUI({ message: '<img border="0" src="' + BASEURL + '/images/preloader/168.gif">' });
+							    		$('.ui-dialog').hide();						    		   			
+							    	},
+							    	onSelectComplete: function() {		     
+										// chill...
+							    	}
+								});
+							// bootleg
+							$('#theme-switcher > select option[value="remove"]').remove();
+							});	
+						</script>	
+					</td> 					
+					<?php endif; ?>				
+			</tr>
+		</table>						
+	</div>
+</div>

@@ -1,0 +1,11 @@
+DROP TABLE `jordon_banned`, `jordon_project_activity`, `jordon_project_category_rel`, `jordon_project_issue_activity`, `jordon_project_issue_attachment`, `jordon_project_issue_comment`, `jordon_project_issue_comment_history`, `jordon_project_issue_component`, `jordon_project_issue_component_version`, `jordon_project_issue_priority`, `jordon_project_issue_rel`, `jordon_project_issue_rel_type`, `jordon_project_issue_resolution`, `jordon_project_issue_state`, `jordon_project_issue_status`, `jordon_project_issue_subcomponent`, `jordon_project_issue_time_tracking`, `jordon_project_issue_type`, `jordon_project_issue_vote`, `jordon_project_issue_watch`, `jordon_project_permission`, `jordon_project_permission_type`, `jordon_project_role_assignment`, `jordon_project_version`, `jordon_site_phrase`, `jordon_site_theme`, `jordon_tag`, `jordon_usergroup_member`, `jordon_usergroup_permission`, `jordon_vendor`;
+DROP TABLE `jordon_usergroup` ;
+DROP TABLE `jordon_site_permission` ;
+DROP TABLE `jordon_project_role` ;
+DROP TABLE `jordon_project_issue` ;
+DROP TABLE `jordon_project_issue_revision` ;
+DROP TABLE `jordon_project` ;
+DROP TABLE `jordon_project_category` ;
+DROP TABLE `jordon_privacy_type` ;
+DROP TABLE `jordon_user` ;
+DROP TABLE `jordon_language` ;

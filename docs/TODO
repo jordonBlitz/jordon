@@ -1,0 +1,12 @@
+Versioning Tables:
+
+id
+version_this -> real table
+version_current -> real table
+
+
+real table
+
+
+id
+version
