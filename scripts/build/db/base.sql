@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 27, 2015 at 02:36 AM
+-- Generation Time: Jun 27, 2015 at 02:47 AM
 -- Server version: 5.5.42-cll
 -- PHP Version: 5.4.31
 
@@ -122,15 +122,7 @@ CREATE TABLE IF NOT EXISTS `jordon_project` (
   KEY `lead` (`lead`),
   KEY `privacy` (`privacy`),
   KEY `active` (`active`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
-
---
--- Dumping data for table `jordon_project`
---
-
-INSERT INTO `jordon_project` (`id`, `key`, `title`, `description`, `branding`, `url`, `lead`, `privacy`, `active`, `date_created`) VALUES(1, 'BWT', 'Bewerbungstool', 'Bewerbungstool', '<i class="fa fa-briefcase"></i>', 'http://pac.pmhdev.com', 1, 'public', '1', 1427484146);
-INSERT INTO `jordon_project` (`id`, `key`, `title`, `description`, `branding`, `url`, `lead`, `privacy`, `active`, `date_created`) VALUES(2, 'REPORTING', 'Reporting Tool', 'Reporting Tool', '<i class="fa fa-area-chart"></i>', 'http://reports.pmgd.info', 1, 'public', '1', 1432194219);
-INSERT INTO `jordon_project` (`id`, `key`, `title`, `description`, `branding`, `url`, `lead`, `privacy`, `active`, `date_created`) VALUES(3, 'COMPRESSION', 'PDF Compression', 'PDF Compression', '<i class="fa fa-file-pdf-o"></i>', NULL, 1, 'public', '1', 1432194739);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -176,13 +168,7 @@ CREATE TABLE IF NOT EXISTS `jordon_project_category` (
   KEY `date_created` (`date_created`),
   KEY `description` (`description`),
   KEY `sort_order` (`sort_order`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `jordon_project_category`
---
-
-INSERT INTO `jordon_project_category` (`id`, `title`, `description`, `sort_order`, `date_created`) VALUES(1, 'Product Media Holding', NULL, NULL, 1406259128);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -772,13 +758,6 @@ CREATE TABLE IF NOT EXISTS `jordon_project_version` (
   KEY `privacy` (`privacy`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
---
--- Dumping data for table `jordon_project_version`
---
-
-INSERT INTO `jordon_project_version` (`id`, `project_id`, `name`, `version`, `description`, `summary`, `release_notes`, `privacy`, `date_released`, `date_created`) VALUES(1, 1, 'MVP', 'MVP', NULL, NULL, NULL, 1, 1406636233, 1406636233);
-INSERT INTO `jordon_project_version` (`id`, `project_id`, `name`, `version`, `description`, `summary`, `release_notes`, `privacy`, `date_released`, `date_created`) VALUES(2, 2, '1.0', '1.0', NULL, NULL, NULL, 1, NULL, 1432302932);
-
 -- --------------------------------------------------------
 
 --
@@ -807,7 +786,7 @@ CREATE TABLE IF NOT EXISTS `jordon_site_config` (
 -- Dumping data for table `jordon_site_config`
 --
 
-INSERT INTO `jordon_site_config` (`id`, `name`, `value`, `possible_values`, `category`, `ui_type`, `hint`, `comment`, `editable`) VALUES(1, 'site_name', 'Jordon', NULL, 'global', 'text', 'Site Name', NULL, '1');
+INSERT INTO `jordon_site_config` (`id`, `name`, `value`, `possible_values`, `category`, `ui_type`, `hint`, `comment`, `editable`) VALUES(1, 'site_name', 'jordon', NULL, 'global', 'text', 'Site Name', NULL, '1');
 INSERT INTO `jordon_site_config` (`id`, `name`, `value`, `possible_values`, `category`, `ui_type`, `hint`, `comment`, `editable`) VALUES(2, 'site_default_preloader_image_path', '__BASEURL__/images/preloader/486.gif', NULL, 'global', 'text', NULL, NULL, '1');
 INSERT INTO `jordon_site_config` (`id`, `name`, `value`, `possible_values`, `category`, `ui_type`, `hint`, `comment`, `editable`) VALUES(3, 'site_default_landing_page', 'projects', NULL, 'global', 'text', 'Local URL to redirect to after login, do not include the scheme, i.e. http://', NULL, '1');
 INSERT INTO `jordon_site_config` (`id`, `name`, `value`, `possible_values`, `category`, `ui_type`, `hint`, `comment`, `editable`) VALUES(4, 'site_allow_template_change', '1', '0,1', 'global', 'radio', 'Allow Template Change', NULL, '1');
